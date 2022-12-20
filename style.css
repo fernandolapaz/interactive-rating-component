@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --lightgrey: hsl(217, 12%, 63%);
+    --mediumgrey: hsla(216, 12%, 54%, 0.1);
+    --darkblue: hsl(213, 19%, 18%);
+    --verydarkblue: hsl(216, 12%, 8%);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: var(--verydarkblue);
+    font-family: 'Overpass', sans-serif;
+    display: grid;
+}
+
+main {
+    background: linear-gradient(to bottom, hsl(213, 19%, 18%), hsl(213, 19%, 10%));
+    width: min(415px, 88%);
+    margin: auto;
+    border-radius: 15px;
+}
+
+.rating-card {
+    display: grid;
+    gap: 1em;
+    padding: 1.4em 1.6em;
+}
+
+.rating-card .star {
+    background: var(--mediumgrey);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.rating-card h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.rating-card p {
+    font-size: 0.88rem;
+    color: var(--lightgrey);
+    line-height: 1.5;
+    margin-bottom: 0.8em;
+}
+
+.rating-card form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 1.5em;
+    column-gap: 1em;
+}
+
+.rating-card form input {
+    display: none;
+}
+
+.rating-card form label {
+    background: var(--mediumgrey);
+    max-width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: var(--lightgrey);
+    font-size: 0.88rem;
+    font-weight: 500;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.rating-card form label:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.rating-card form input:checked+label {
+    background-color: var(--lightgrey);
+    color: var(--white);
+}
+
+.rating-card .btn {
+    grid-column: 1 / -1;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--orange);
+    color: hsla(0, 0%, 100%, 0.8);
+    width: 100%;
+    margin: auto;
+    border: none;
+    padding: 14px 0;
+    border-radius: 30px;
+}
+
+.rating-card .btn:hover {
+    background-color: var(--white);
+    color: var(--orange);
+    cursor: pointer;
+}
+
+.ty-card {
+    display: grid;
+    gap: 1.4em;
+    padding: 1.6em 1.6em 2.3em 1.6em;
+    justify-items: center;
+    text-align: center;
+}
+
+.ty-card img {
+    max-width: 150px;
+}
+
+.ty-card .user-rating {
+    background-color: var(--mediumgrey);
+    color: rgba(255, 165, 0, 0.8);
+    font-size: 0.88rem;
+    padding: 0.6em 1em;
+    border-radius: 20px;
+}
+
+.ty-card h2 {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.ty-card p {
+    color: var(--lightgrey);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+/* in case the user has not selected any option */
+#message {
+    color: tomato;
+    font-size: 0.8rem;
+    text-align: center;
+    height: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width: 450px) {
+
+    html {
+        font-size: 18px;
+    }
+
+    .rating-card {
+        padding: 1.6em 2em;
+    }
+
+    .rating-card .star {
+        width: 50px;
+        height: 50px;
+    }
+
+    .rating-card h1 {
+        font-size: 1.65rem;
+    }
+
+    .rating-card form label {
+        max-width: 50px;
+        height: 50px;
+    }
+
+}
+
+.attribution {
+    font-size: 12px;
+    text-align: center;
+    color: var(--lightgrey);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
