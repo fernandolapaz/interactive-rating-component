@@ -184,13 +184,3 @@ main {
     }
 
 }
-
-.attribution {
-    font-size: 12px;
-    text-align: center;
-    color: var(--lightgrey);
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
-}
